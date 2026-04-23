@@ -1,19 +1,36 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: blue;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
     color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 div#local {
     background-color: rgb(0, 0, 0);
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    
 }
 
 div#result {
     background-color: rgb(0, 0, 0);
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    padding: 20px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
