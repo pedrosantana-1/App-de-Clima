@@ -1,0 +1,2 @@
+# App de Clima
+Aplicação web desenvolvida para consultar o clima em tempo real de qualquer cidade, utilizando integração com API externa.  O usuário informa o nome da cidade e o sistema retorna dados atualizados como temperatura, condições climáticas e outras informações relevantes.  Este projeto foi desenvolvido com foco em prática de conceitos fundamentais do desenvolvimento front-end, incluindo manipulação do DOM, consumo de APIs com JavaScript .
