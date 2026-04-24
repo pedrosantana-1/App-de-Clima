@@ -13,13 +13,19 @@
             <button onclick="buscarClima()">Buscar</button>
         </div>
         <div id="result">
-            Resultado
+            <h2 id="city">--</h2>
+            <p id="temp">--°C</p>
+            <p id="desc">--</p>
+            <p id="humidity">Umidade: --%
         </div>
     </div>
 
     <script>
-        async function buscarClima();
-        const cidade = document.getElementById("cidade").value;
+        function buscarClima() {
+            const cidade = document.getElementById("cidade").value;
+
+            console.log(cidade);
+        }
     </script>
 </body>
 </html>
