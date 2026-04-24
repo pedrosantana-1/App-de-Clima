@@ -9,11 +9,14 @@
 <body>
     <div id="container">
         <div id="local">
-            <input type="text" id="cidade" placeholder="Digite a cidade">
-            <button onclick="buscarClima()">Buscar</button>
+            <div class="search">
+                <input type="text" id="cidade" placeholder="Digite a cidade">
+                <button onclick="buscarClima()">Buscar</button>
+            </div>
         </div>
         <div id="result">
             <h2 id="city">--</h2>
+            <img id="icon" src="" alt="">
             <p id="temp">--°C</p>
             <p id="desc">--</p>
             <p id="humidity">Umidade: --%
@@ -21,11 +24,28 @@
     </div>
 
     <script>
-        function buscarClima() {
+        async function buscarClima() {
             const cidade = document.getElementById("cidade").value;
+            const apiKey = "6f455bcd9fc628f63a741c79e975b4ce";
+            
 
-            console.log(cidade);
-        }
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt`;
+
+            const resposta = await fetch(url);
+            const dados = await resposta.json();
+
+            if (dados.cod === "404") {
+            alert("Cidade não encontrada");
+            return;
+            }
+
+            console.log(dados);
+
+            document.getElementById("city").innerText = dados.name;
+            document.getElementById("temp").innerText = Math.round(dados.main.temp) + "°C";
+            document.getElementById("desc").innerText = dados.weather[0].description;
+            document.getElementById("humidity").innerText = "Umidade: " + dados.main.humidity + "%";
+            }
     </script>
 </body>
 </html>
